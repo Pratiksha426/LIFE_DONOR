@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="static/register.css">
+<!--    <link rel="stylesheet" href="lstyle.css"> &lt;!&ndash; Assuming you have a common stylesheet &ndash;&gt;-->
+</head>
+<body>
+    <div class="wrapper">
+        <form action="{% if section == 'Admin' %}{{ url_for('admin_register') }}{% elif section == 'User' %}{{ url_for('user_register') }}{% else %}{{ url_for('hospital_register') }}{% endif %}" method="post">
+<!--        <form action="/register" method="POST">-->
+            <h1>Register</h1>
+            <div class="input-box">
+              <input type="text" name="username" placeholder="Username" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="password" name="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+            <div class="login-link">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

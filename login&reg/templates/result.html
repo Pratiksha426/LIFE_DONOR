@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Result</title>
+</head>
+<body>
+    <h1>Recommendation Result</h1>
+    <p>Top Recommended hospital based on your provided data: {{ recommended_hospital }}</p>
+    <p>Other recommendations you can go for:</p>
+    <ul>
+    {% for recommendation in other_recommendations %}
+        <li>{{ recommendation }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

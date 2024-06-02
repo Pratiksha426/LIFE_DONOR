@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("organ-tracker-img.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: rgb(27, 4, 84);
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.toggle_btn {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: rgb(27, 4, 84);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.action_btn:hover {
+    background-color: white;
+    color: rgb(27, 4, 84);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: rgb(8, 2, 43);
+}
+
+.hero h1 {
+    font-size: 5rem;
+}
+
+.hero p {
+    font-size: 2rem; /* corrected typo from 2ren to 2rem */
+    font-weight: 500;
+}
+
+@media (max-width: 720px) {
+    ul,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 25px;
+    }
+
+    .navbar {
+        width: 90%;
+    }
+
+    .dropdown {
+        display: block !important;
+        width: unset !important;
+        left: 2rem;
+    }
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1); /* corrected rgba syntax */
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    height: 0;
+    transition: height 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .action_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown.open {
+    height: 200px;
+}
